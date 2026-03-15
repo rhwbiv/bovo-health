@@ -1,0 +1,51 @@
+/* [project]/src/styles/globals.css [app-client] (css) */
+*, :before, :after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --slate: #2a4a6b;
+  --slate-mid: #3d6a96;
+  --slate-light: #6a9cc0;
+  --slate-pale: #e8f2fa;
+  --slate-xpale: #f3f8fc;
+  --coral: #e8603c;
+  --coral-mid: #ef7f5f;
+  --coral-light: #f7c4b3;
+  --coral-pale: #fdf0eb;
+  --ink: #1a2d3d;
+  --muted: #5a7a8f;
+  --border: #2a4a6b1f;
+  --offwhite: #f6f9fc;
+  --green: #3b6d11;
+  --green-light: #eaf3de;
+  --font-display: "Playfair Display", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+}
+
+html, body {
+  font-family: var(--font-body);
+  background: var(--offwhite);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+input, select, textarea {
+  font-family: var(--font-body);
+}
+
+/*# sourceMappingURL=src_styles_globals_47180df9.css.map*/

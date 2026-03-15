@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Slate blues */
+  --slate: #2A4A6B;
+  --slate-mid: #3D6A96;
+  --slate-light: #6A9CC0;
+  --slate-pale: #E8F2FA;
+  --slate-xpale: #F3F8FC;
+
+  /* Coral oranges */
+  --coral: #E8603C;
+  --coral-mid: #EF7F5F;
+  --coral-light: #F7C4B3;
+  --coral-pale: #FDF0EB;
+
+  /* Neutrals */
+  --ink: #1A2D3D;
+  --muted: #5A7A8F;
+  --border: rgba(42, 74, 107, 0.12);
+  --offwhite: #F6F9FC;
+
+  /* Clinic fund green */
+  --green: #3B6D11;
+  --green-light: #EAF3DE;
+
+  /* Typography */
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+html,
+body {
+  font-family: var(--font-body);
+  background: var(--offwhite);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+input,
+select,
+textarea {
+  font-family: var(--font-body);
+}
