@@ -63,14 +63,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trust bar */}
-      <div style={{ borderTop: '0.5px solid var(--border)', borderBottom: '0.5px solid var(--border)', padding: '1.4rem 3rem', display: 'flex', alignItems: 'center', gap: '2.5rem', justifyContent: 'center', flexWrap: 'wrap', background: 'white' }}>
-        <span style={{ fontSize: '0.7rem', color: 'var(--muted)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Trusted by teams at</span>
-        {['MERIDIAN HEALTH', 'APEX CORP', 'NOVA SYSTEMS', 'GROVE PARTNERS', 'SOLIS GROUP'].map(name => (
-          <span key={name} style={{ fontSize: '0.8rem', fontWeight: 600, color: '#B0C4D4', letterSpacing: '0.05em' }}>{name}</span>
-        ))}
-      </div>
-
       {/* How it works */}
       <section style={{ padding: '5rem 3rem', maxWidth: 1100, margin: '0 auto' }}>
         <div style={{ fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--coral)', fontWeight: 600, marginBottom: '0.6rem' }}>How it works</div>
