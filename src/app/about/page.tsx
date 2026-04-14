@@ -9,11 +9,56 @@ const team = [
   { initials: 'PN', name: 'Priya Nair', role: 'Head of Product', bio: 'Previously VP Product at Hims & Hers. Passionate about health equity.', bg: '#6B3FA0' },
 ]
 
+const ShieldIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--slate-mid)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </svg>
+)
+const HeartIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+  </svg>
+)
+const TrendingIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+    <polyline points="17 6 23 6 23 12"/>
+  </svg>
+)
+const HeartStatIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+  </svg>
+)
+const UsersIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--slate-mid)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+    <circle cx="9" cy="7" r="4"/>
+    <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+    <path d="M16 3.13a4 4 0 010 7.75"/>
+  </svg>
+)
+const ClinicIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--slate-mid)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+    <polyline points="9 22 9 12 15 12 15 22"/>
+  </svg>
+)
+const ChartIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--slate-mid)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="20" x2="18" y2="10"/>
+    <line x1="12" y1="20" x2="12" y2="4"/>
+    <line x1="6" y1="20" x2="6" y2="14"/>
+  </svg>
+)
+
 const values = [
-  { ico: '🛡️', bg: 'var(--slate-pale)', title: 'No health data, ever', body: 'Bovo never accesses or analyses employee health records. The clinic fund model means we don\'t need to — and employee privacy is never at risk.' },
-  { ico: '❤️', bg: 'var(--coral-pale)', title: 'Physicians decide, we fund', body: 'We trust clinical judgment over any algorithm. Doctors know their patients. Our job is to remove the financial barrier so they can act on that knowledge.' },
-  { ico: '⏱️', bg: 'var(--green-light)', title: 'Passive impact at scale', body: 'The clinic fund grows without anyone lifting a finger. Every wellness purchase contributes. That\'s how individual benefit becomes collective impact.' },
+  { Icon: ShieldIcon, bg: 'var(--slate-pale)', title: 'No health data, ever', body: 'Bovo never accesses or analyses employee health records. The clinic fund model means we don\'t need to — and employee privacy is never at risk.' },
+  { Icon: HeartIcon, bg: 'var(--coral-pale)', title: 'Physicians decide, we fund', body: 'We trust clinical judgment over any algorithm. Doctors know their patients. Our job is to remove the financial barrier so they can act on that knowledge.' },
+  { Icon: TrendingIcon, bg: 'var(--green-light)', title: 'Passive impact at scale', body: 'The clinic fund grows without anyone lifting a finger. Every wellness purchase contributes. That\'s how individual benefit becomes collective impact.' },
 ]
+
+const statIcons = [HeartStatIcon, UsersIcon, ClinicIcon, ChartIcon]
 
 export default function AboutPage() {
   return (
@@ -52,19 +97,22 @@ export default function AboutPage() {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
           {[
-            { value: '90%+', label: 'Survival rate with early colorectal detection', dark: false, ico: '❤️' },
-            { value: '340', label: 'Screenings funded to date', dark: true, ico: '😊' },
-            { value: '18', label: 'Clinic partners nationwide', dark: false, ico: '🏥' },
-            { value: '72%', label: 'Average employee utilization rate', dark: false, ico: '📈' },
-          ].map(s => (
+            { value: '90%+', label: 'Survival rate with early colorectal detection', dark: false },
+            { value: '340', label: 'Screenings funded to date', dark: true },
+            { value: '18', label: 'Clinic partners nationwide', dark: false },
+            { value: '72%', label: 'Average employee utilization rate', dark: false },
+          ].map((s, i) => {
+            const Icon = statIcons[i]
+            return (
             <div key={s.value} style={{ background: s.dark ? 'var(--ink)' : 'white', borderRadius: 14, border: '0.5px solid var(--border)', padding: '1.2rem 1.4rem', display: 'flex', alignItems: 'center', gap: '0.9rem' }}>
-              <div style={{ width: 38, height: 38, borderRadius: 10, background: s.dark ? 'rgba(255,255,255,0.08)' : 'var(--slate-pale)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 17, flexShrink: 0 }}>{s.ico}</div>
+              <div style={{ width: 38, height: 38, borderRadius: 10, background: s.dark ? 'rgba(255,255,255,0.08)' : 'var(--slate-pale)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><Icon /></div>
               <div>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.7rem', fontWeight: 700, color: s.dark ? 'white' : 'var(--ink)', lineHeight: 1 }}>{s.value}</div>
                 <div style={{ fontSize: '0.72rem', color: s.dark ? 'rgba(255,255,255,0.4)' : 'var(--muted)', marginTop: '0.1rem', fontWeight: 300 }}>{s.label}</div>
               </div>
             </div>
-          ))}
+            )
+          })}
         </div>
       </div>
 
@@ -100,7 +148,7 @@ export default function AboutPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.2rem' }}>
           {values.map(v => (
             <div key={v.title} style={{ background: 'white', borderRadius: 14, border: '0.5px solid var(--border)', padding: '1.75rem' }}>
-              <div style={{ width: 36, height: 36, borderRadius: 10, background: v.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, marginBottom: '0.9rem' }}>{v.ico}</div>
+              <div style={{ width: 36, height: 36, borderRadius: 10, background: v.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.9rem' }}><v.Icon /></div>
               <h3 style={{ fontSize: '0.92rem', fontWeight: 600, marginBottom: '0.35rem' }}>{v.title}</h3>
               <p style={{ fontSize: '0.8rem', color: 'var(--muted)', lineHeight: 1.7, fontWeight: 300 }}>{v.body}</p>
             </div>
